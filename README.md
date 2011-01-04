@@ -5,7 +5,7 @@ CLI Table
 This utility allows you to render unicode-aided tables on the command line from
 your node.js scripts.
 
-![Screenshot](http://cl.ly/3qxy/Screen_shot_2011-01-03_at_6.56.32_PM.png)
+![Screenshot](http://i.imgur.com/sYq4T.png)
 
 ## Features
 
