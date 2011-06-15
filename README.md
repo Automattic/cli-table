@@ -1,4 +1,3 @@
-
 CLI Table
 =========
 
@@ -19,33 +18,39 @@ your node.js scripts.
 - Easy-to-use API
 
 ## Installation
-    
-    npm install cli-table
+
+```bash    
+npm install cli-table
+```
 
 ## How to use
 
-    var Table = require('cli-table');
+```javascript
+var Table = require('cli-table');
 
-    // instantiate
-    var table = new Table({
-        head: ['TH 1 label', 'TH 2 label']
-      , colWidths: [100, 200]
-    });
+// instantiate
+var table = new Table({
+    head: ['TH 1 label', 'TH 2 label']
+  , colWidths: [100, 200]
+});
 
-    // table is an Array, so you can `push`, `unshift`, `splice` and friends
-    table.push(
-        ['First value', 'Second value']
-      , ['First value', 'Second value']
-    );
+// table is an Array, so you can `push`, `unshift`, `splice` and friends
+table.push(
+    ['First value', 'Second value']
+  , ['First value', 'Second value']
+);
 
-    // render
-    console.log(table.toString());
+// render
+console.log(table.toString());
+```
 
 ## Running tests
 
 Clone the repository with all its submodules and run:
 
-    $ make test
+```bash
+$ make test
+```
 
 ## Credits
 
