@@ -40,12 +40,12 @@ table.push(
 console.log(table.toString());
 
 /* headless */
-var headless_table = new Table({});
+var headless_table = new Table();
 headless_table.push(['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']);
 console.log(headless_table.toString());
 
 /* vertical */
-var vertical_table = new Table({});
+var vertical_table = new Table();
 vertical_table.push({ "Some Key": "Some Value"},
                     { "Another much longer key": "And its corresponding longer value"}
 );
