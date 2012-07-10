@@ -3,9 +3,6 @@
  * Module requirements.
  */
 
-// this line is only needed if you refuse to use npm
-require.paths.unshift(__dirname + '/../support/colors');
-
 var Table = require('../lib/cli-table');
 
 /**
