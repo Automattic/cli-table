@@ -9,6 +9,7 @@ var Table = require('../lib/cli-table');
  * Example.
  */
 
+/* col widths */
 var table = new Table({ 
     head: ['Rel', 'Change', 'By', 'When']
   , colWidths: [6, 21, 25, 17]
@@ -22,6 +23,7 @@ table.push(
 console.log(table.toString());
 
 
+/* compact */
 var table = new Table({ 
     head: ['Rel', 'Change', 'By', 'When']
   , colWidths: [6, 21, 25, 17]
@@ -37,8 +39,13 @@ table.push(
 
 console.log(table.toString());
 
-var vertical_table = new Table({ head: ["Key", "Value"]});
+/* headless */
+var headless_table = new Table({});
+headless_table.push(['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']);
+console.log(headless_table.toString());
 
+/* vertical */
+var vertical_table = new Table({});
 vertical_table.push({ "Some Key": "Some Value"},
                     { "Another much longer key": "And its corresponding longer value"}
 );
