@@ -3,7 +3,7 @@
  * Module requirements.
  */
 
-require('./common');
+require('should');
 
 var Table = require('cli-table');
 
@@ -47,6 +47,24 @@ module.exports = {
     });
 
     table.width.should.eql(8);
-  }
+  },
 
+  'test vertical table output': function() {
+    var table = new Table({ style: {} }); // clear styles to prevent color output
+
+    table.push(
+        {'v0.1': 'Testing something cool'}
+      , {'v0.1': 'Testing something cool'}
+    );
+
+    var expected = [
+        '┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓'
+      , '┃v0.1     ┃Testing something cool┃'
+      , '┣━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━┫'
+      , '┃v0.1     ┃Testing something cool┃'
+      , '┗━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━┛'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  }
 };
