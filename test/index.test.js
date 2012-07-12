@@ -3,7 +3,7 @@
  * Module requirements.
  */
 
-require('./common');
+require('should');
 
 var Table = require('cli-table');
 
