@@ -25,6 +25,7 @@ npm install cli-table
 
 ## How to use
 
+### Horizontal Tables
 ```javascript
 var Table = require('cli-table');
 
@@ -40,7 +41,19 @@ table.push(
   , ['First value', 'Second value']
 );
 
-// render
+console.log(table.toString());
+```
+
+### Vertical Tables
+```javascript
+var Table = require('cli-table');
+var table = new Table();
+
+table.push(
+    { 'Some key': 'Some value' }
+  , { 'Another key': 'Another value' }
+);
+
 console.log(table.toString());
 ```
 
