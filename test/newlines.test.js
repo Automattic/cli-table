@@ -29,5 +29,10 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test column width is accurately reflected when newlines are present': function() {
+    var table = new Table({ head: ['Test\nWidth'] });
+    table.width.should.eql(9);
   }
 };
