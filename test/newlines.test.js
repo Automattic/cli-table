@@ -34,5 +34,21 @@ module.exports = {
   'test column width is accurately reflected when newlines are present': function() {
     var table = new Table({ head: ['Test\nWidth'] });
     table.width.should.eql(9);
+  },
+
+  'test newlines in body cells': function() {
+    var table = new Table();
+
+    table.push(["something\nwith\nnewlines"]);
+
+    var expected = [
+        '┌───────────┐'
+      , '│ something │'
+      , '│ with      │'
+      , '│ newlines  │'
+      , '└───────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
   }
 };
