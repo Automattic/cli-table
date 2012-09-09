@@ -2,6 +2,7 @@
   , "description": "Pretty unicode tables for the CLI"
   , "version": "0.0.2"
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
+  , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
       "colors": "0.3.0"
