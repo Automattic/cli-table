@@ -50,5 +50,41 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test newlines in vertical cell header and body': function() {
+    var table = new Table({ style: {} });
+
+    table.push(
+        {'v\n0.1': 'Testing\nsomething cool'}
+    );
+
+    var expected = [
+        '┌───┬──────────────┐'
+      , '│v  │Testing       │'
+      , '│0.1│something cool│'
+      , '└───┴──────────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test newlines in cross table header and body': function() {
+    var table = new Table({ head: ["", "Header\n1"], style: {} });
+
+    table.push({ "Header\n2": ['Testing\nsomething\ncool'] });
+
+    var expected = [
+        '┌──────┬─────────┐'
+      , '│      │Header   │'
+      , '│      │1        │'
+      , '├──────┼─────────┤'
+      , '│Header│Testing  │'
+      , '│2     │something│'
+      , '│      │cool     │'
+      , '└──────┴─────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
   }
 };
