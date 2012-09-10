@@ -58,11 +58,11 @@ module.exports = {
     );
 
     var expected = [
-        '┌─────────┬──────────────────────┐'
-      , '│v0.1     │Testing something cool│'
-      , '├─────────┼──────────────────────┤'
-      , '│v0.1     │Testing something cool│'
-      , '└─────────┴──────────────────────┘'
+        '┌────┬──────────────────────┐'
+      , '│v0.1│Testing something cool│'
+      , '├────┼──────────────────────┤'
+      , '│v0.1│Testing something cool│'
+      , '└────┴──────────────────────┘'
     ];
 
     table.toString().should.eql(expected.join("\n"));
