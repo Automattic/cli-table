@@ -1,6 +1,6 @@
 {   "name": "cli-table"
   , "description": "Pretty unicode tables for the CLI"
-  , "version": "0.0.2"
+  , "version": "0.2.0"
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "keywords": ["cli", "colors", "table"]
