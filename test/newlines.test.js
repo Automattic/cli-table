@@ -4,7 +4,7 @@
 
 require('should');
 
-var Table = require('cli-table');
+var Table = require('../');
 
 /**
  * Tests.
