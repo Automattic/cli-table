@@ -14,11 +14,13 @@ var Table = require('../');
 module.exports = {
 
   'test complete table': function (){
-    var table = new Table({ 
+    var table = new Table({
         head: ['Rel', 'Change', 'By', 'When']
       , style: {
             'padding-left': 1
           , 'padding-right': 1
+          , head: []
+          , border: []
         }
       , colWidths: [6, 21, 25, 17]
     });
@@ -43,14 +45,18 @@ module.exports = {
 
   'test width property': function (){
     var table = new Table({
-        head: ['Cool']
+        head: ['Cool'],
+        style: {
+          head: [],
+          border: []
+        }
     });
 
     table.width.should.eql(8);
   },
 
   'test vertical table output': function() {
-    var table = new Table({ style: {} }); // clear styles to prevent color output
+    var table = new Table({ style: {'padding-left':0, 'padding-right':0, head:[], border:[]} }); // clear styles to prevent color output
 
     table.push(
         {'v0.1': 'Testing something cool'}
@@ -69,7 +75,7 @@ module.exports = {
   },
 
   'test cross table output': function() {
-    var table = new Table({ head: ["", "Header 1", "Header 2"], style: {} }); // clear styles to prevent color output
+    var table = new Table({ head: ["", "Header 1", "Header 2"], style: {'padding-left':0, 'padding-right':0, head:[], border:[]} }); // clear styles to prevent color output
 
     table.push(
         {"Header 3": ['v0.1', 'Testing something cool'] }
