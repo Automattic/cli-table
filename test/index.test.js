@@ -93,5 +93,27 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test table colors': function(){
+    var table = new Table({
+      head: ['Rel', 'By'],
+      style: {head: ['red'], border: ['grey']}
+    });
+
+    table.push(
+        ['v0.1', 'rauchg@gmail.com']
+    );
+
+    var off = '\u001b[39m', red = '\u001b[31m', grey = '\u001b[90m';
+    var expected = [
+        grey + '┌──────┬──────────────────┐' + off
+      , grey + '│' + off + red + ' Rel  ' + off + grey + '│' + off + red + ' By               ' + off + grey + '│' + off
+      , grey + '├──────┼──────────────────┤' + off
+      , grey + '│' + off + ' v0.1 ' + grey + '│' + off + ' rauchg@gmail.com ' + grey + '│' + off
+      , grey + '└──────┴──────────────────┘' + off
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
   }
 };
