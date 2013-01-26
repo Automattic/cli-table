@@ -17,6 +17,8 @@ module.exports = {
       , style: {
             'padding-left': 1
           , 'padding-right': 1
+          , head: []
+          , border: []
         }
     });
 
@@ -32,12 +34,12 @@ module.exports = {
   },
 
   'test column width is accurately reflected when newlines are present': function() {
-    var table = new Table({ head: ['Test\nWidth'] });
+    var table = new Table({ head: ['Test\nWidth'], style: {head:[], border:[]} });
     table.width.should.eql(9);
   },
 
   'test newlines in body cells': function() {
-    var table = new Table();
+    var table = new Table({style: {head:[], border:[]}});
 
     table.push(["something\nwith\nnewlines"]);
 
@@ -53,7 +55,7 @@ module.exports = {
   },
 
   'test newlines in vertical cell header and body': function() {
-    var table = new Table({ style: {} });
+    var table = new Table({ style: {'padding-left':0, 'padding-right':0, head:[], border:[]} });
 
     table.push(
         {'v\n0.1': 'Testing\nsomething cool'}
@@ -70,7 +72,7 @@ module.exports = {
   },
 
   'test newlines in cross table header and body': function() {
-    var table = new Table({ head: ["", "Header\n1"], style: {} });
+    var table = new Table({ head: ["", "Header\n1"], style: {'padding-left':0, 'padding-right':0, head:[], border:[]} });
 
     table.push({ "Header\n2": ['Testing\nsomething\ncool'] });
 
