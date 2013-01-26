@@ -5,7 +5,7 @@
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
-      "colors": "0.3.0"
+      "colors": "~0.3"
     }
   , "devDependencies": {
       "expresso": "~0.9"
