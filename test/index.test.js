@@ -130,11 +130,8 @@ module.exports = {
         , 'bottom-right': '╝'
         , 'left': '║'
         , 'left-mid': '╟'
-        , 'mid': '─'
-        , 'mid-mid': '┼'
         , 'right': '║'
         , 'right-mid': '╢'
-        , 'middle': '│'
       },
       style: {
           head: []
@@ -177,6 +174,75 @@ module.exports = {
       , '│ foo  │ bar │ baz  │'
       , '│ frob │ bar │ quuz │'
       , '└──────┴─────┴──────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test compact empty mid line': function (){
+    var table = new Table({
+      chars: {
+          'mid': ''
+        , 'left-mid': ''
+        , 'mid-mid': ''
+        , 'right-mid': ''
+      },
+      style: {
+          head: []
+        , border: []
+      }
+    });
+
+    table.push(
+        ['foo', 'bar', 'baz']
+      , ['frob', 'bar', 'quuz']
+    );
+
+    var expected = [
+        '┌──────┬─────┬──────┐'
+      , '│ foo  │ bar │ baz  │'
+      , '│ frob │ bar │ quuz │'
+      , '└──────┴─────┴──────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test decoration lines disabled': function (){
+    var table = new Table({
+      chars: {
+          'top': ''
+        , 'top-mid': ''
+        , 'top-left': ''
+        , 'top-right': ''
+        , 'bottom': ''
+        , 'bottom-mid': ''
+        , 'bottom-left': ''
+        , 'bottom-right': ''
+        , 'left': ''
+        , 'left-mid': ''
+        , 'mid': ''
+        , 'mid-mid': ''
+        , 'right': ''
+        , 'right-mid': ''
+        , 'middle': ' ' // a single space
+      },
+      style: {
+          head: []
+        , border: []
+        , 'padding-left': 0
+        , 'padding-right': 0
+      }
+    });
+
+    table.push(
+        ['foo', 'bar', 'baz']
+      , ['frobnicate', 'bar', 'quuz']
+    );
+
+    var expected = [
+        'foo        bar baz '
+      , 'frobnicate bar quuz'
     ];
 
     table.toString().should.eql(expected.join("\n"));
