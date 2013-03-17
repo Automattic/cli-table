@@ -115,5 +115,47 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
-  }
+  },
+
+  'test custom chars': function (){
+    var table = new Table({
+      chars: {
+          'top': '═'
+        , 'top-mid': '╤'
+        , 'top-left': '╔'
+        , 'top-right': '╗'
+        , 'bottom': '═'
+        , 'bottom-mid': '╧'
+        , 'bottom-left': '╚'
+        , 'bottom-right': '╝'
+        , 'left': '║'
+        , 'left-mid': '╟'
+        , 'mid': '─'
+        , 'mid-mid': '┼'
+        , 'right': '║'
+        , 'right-mid': '╢'
+        , 'middle': '│'
+      },
+      style: {
+          head: []
+        , border: []
+      }
+    });
+
+    table.push(
+        ['foo', 'bar', 'baz']
+      , ['frob', 'bar', 'quuz']
+    );
+
+    var expected = [
+        '╔══════╤═════╤══════╗'
+      , '║ foo  │ bar │ baz  ║'
+      , '╟──────┼─────┼──────╢'
+      , '║ frob │ bar │ quuz ║'
+      , '╚══════╧═════╧══════╝'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  },
+
 };
