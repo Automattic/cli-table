@@ -158,4 +158,28 @@ module.exports = {
     table.toString().should.eql(expected.join("\n"));
   },
 
+  'test compact shortand': function (){
+    var table = new Table({
+      style: {
+          head: []
+        , border: []
+        , compact : true
+      }
+    });
+
+    table.push(
+        ['foo', 'bar', 'baz']
+      , ['frob', 'bar', 'quuz']
+    );
+
+    var expected = [
+        '┌──────┬─────┬──────┐'
+      , '│ foo  │ bar │ baz  │'
+      , '│ frob │ bar │ quuz │'
+      , '└──────┴─────┴──────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  },
+
 };
