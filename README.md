@@ -74,6 +74,71 @@ table.push(
 console.log(table.toString());
 ```
 
+### Custom styles
+The ```chars``` property controls how the table is drawn:
+```javascript
+var table = new Table({
+  chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
+         , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
+         , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
+         , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }
+});
+
+table.push(
+    ['foo', 'bar', 'baz']
+  , ['frob', 'bar', 'quuz']
+);
+
+console.log(table.toString());
+// Outputs:
+//
+//╔══════╤═════╤══════╗
+//║ foo  │ bar │ baz  ║
+//╟──────┼─────┼──────╢
+//║ frob │ bar │ quuz ║
+//╚══════╧═════╧══════╝
+```
+
+Empty decoration lines will be skipped, to avoid vertical separator rows just
+set the 'mid', 'left-mid', 'mid-mid', 'right-mid' to the empty string:
+```javascript
+var table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
+table.push(
+    ['foo', 'bar', 'baz']
+  , ['frobnicate', 'bar', 'quuz']
+);
+
+console.log(table.toString());
+// Outputs: (note the lack of the horizontal line between rows)
+//┌────────────┬─────┬──────┐
+//│ foo        │ bar │ baz  │
+//│ frobnicate │ bar │ quuz │
+//└────────────┴─────┴──────┘
+```
+
+By setting all chars to empty with the exception of 'middle' being set to a
+single space and by setting padding to zero, it's possible to get the most
+compact layout with no decorations:
+```javascript
+var table = new Table({
+  chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': ''
+         , 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': ''
+         , 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': ''
+         , 'right': '' , 'right-mid': '' , 'middle': ' ' },
+  style: { 'padding-left': 0, 'padding-right': 0 }
+});
+
+table.push(
+    ['foo', 'bar', 'baz']
+  , ['frobnicate', 'bar', 'quuz']
+);
+
+console.log(table.toString());
+// Outputs:
+//foo        bar baz
+//frobnicate bar quuz
+```
+
 ## Running tests
 
 Clone the repository with all its submodules and run:
