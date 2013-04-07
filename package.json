@@ -6,6 +6,7 @@
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
       "colors": "~0.3"
+    , "unicode-eastasianwidth": "~0.3.0"
     }
   , "devDependencies": {
       "expresso": "~0.9"
