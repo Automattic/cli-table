@@ -4,6 +4,10 @@
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "keywords": ["cli", "colors", "table"]
+  , "repository": { 
+      "type": "git"
+    , "url": "https://github.com/LearnBoost/cli-table.git"
+    }
   , "dependencies": {
       "colors": "~0.3"
     }
