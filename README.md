@@ -1,5 +1,7 @@
 
+![Build Status](https://travis-ci.org/katoy/cli-table.png)](https://travis-ci.org/katoy/cli-table)
 [![Dependency Status](https://gemnasium.com/katoy/cli-table.png)](https://gemnasium.com/katoy/cli-table)
+
 
 CLI Table
 =========
