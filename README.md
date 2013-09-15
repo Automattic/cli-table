@@ -1,3 +1,6 @@
+
+[![Dependency Status](https://gemnasium.com/katoy/cli-table.png)](https://gemnasium.com/katoy/cli-table)
+
 CLI Table
 =========
 
