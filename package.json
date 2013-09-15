@@ -5,12 +5,16 @@
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
-      "colors": "~0.3"
+      "colors": ">= 0.3"
+    , "unicode-eastasianwidth": ">= 0.3.0"
     }
   , "devDependencies": {
-      "expresso": "~0.9"
-    , "should": "~0.6"
+      "expresso": ">= 0.9"
+    , "should": ">= 0.6"
     }
+  , "scripts": {
+      "test": "make test"
+  }
   , "main": "./index.js"
   , "engines": { "node": ">= 0.2.0" }
 }
