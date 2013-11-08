@@ -248,4 +248,24 @@ module.exports = {
     table.toString().should.eql(expected.join("\n"));
   },
 
+  'test with null/undefined as values or column names': function (){
+    var table = new Table({
+      style: {
+          head: []
+        , border: []
+      }
+    });
+
+    table.push(
+        [null, undefined]
+    );
+
+    var expected = [
+        '┌──────┬───────────┐'
+      , '│      │           │'
+      , '└──────┴───────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  }
 };
