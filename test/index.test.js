@@ -257,13 +257,13 @@ module.exports = {
     });
 
     table.push(
-        [null, undefined]
+        [null, undefined, 0]
     );
 
     var expected = [
-        '┌──────┬───────────┐'
-      , '│      │           │'
-      , '└──────┴───────────┘'
+        '┌──────┬───────────┬───┐'
+      , '│      │           │ 0 │'
+      , '└──────┴───────────┴───┘'
     ];
 
     table.toString().should.eql(expected.join("\n"));
