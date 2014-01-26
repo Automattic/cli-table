@@ -101,16 +101,22 @@ module.exports = {
       style: {head: ['red'], border: ['grey']}
     });
 
+    var off = '\u001b[39m'
+      , red = '\u001b[31m'
+      , orange = '\u001b[38;5;221m'
+      , grey = '\u001b[90m'
+
+      , c256s = orange + 'v0.1' + off;
+
     table.push(
-        ['v0.1', 'rauchg@gmail.com']
+        [c256s, 'rauchg@gmail.com']
     );
 
-    var off = '\u001b[39m', red = '\u001b[31m', grey = '\u001b[90m';
     var expected = [
         grey + '┌──────┬──────────────────┐' + off
       , grey + '│' + off + red + ' Rel  ' + off + grey + '│' + off + red + ' By               ' + off + grey + '│' + off
       , grey + '├──────┼──────────────────┤' + off
-      , grey + '│' + off + ' v0.1 ' + grey + '│' + off + ' rauchg@gmail.com ' + grey + '│' + off
+      , grey + '│' + off + ' ' + c256s + ' ' + grey + '│' + off + ' rauchg@gmail.com ' + grey + '│' + off
       , grey + '└──────┴──────────────────┘' + off
     ];
 
