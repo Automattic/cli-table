@@ -1,4 +1,19 @@
 
+0.3.0 / 2014-02-02
+==================
+
+ * Switch version of colors to avoid npm broken-ness
+ * Handle custom colored strings correctly
+ * Removing var completely as return var width caused other problems.
+ * Fixing global leak of width variable.
+ * Omit horizontal decoration lines if empty
+ * Add a test for the the compact mode
+ * Make line() return the generated string instead of appending it to ret
+ * Customize the vertical cell separator separately from the right one
+ * Allow newer versions of colors to be used
+ * Added test for bordercolor
+ * Add bordercolor in style options and enable deepcopy of options
+
 0.2.0 / 2012-10-21
 ==================
 
