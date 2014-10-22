@@ -1,4 +1,4 @@
-CLI Table
+CLI Table [![NPM Version](http://badge.fury.io/js/cli-table.svg)](http://badge.fury.io/js/cli-table) [![Build Status](https://secure.travis-ci.org/Automattic/cli-table.svg)](http://travis-ci.org/Automattic/cli-table)
 =========
 
 This utility allows you to render unicode-aided tables on the command line from
