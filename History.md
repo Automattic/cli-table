@@ -1,4 +1,13 @@
 
+0.3.1 / 2014-10-22
+==================
+
+ * 24-bit ANSI colors
+ * Safe colors (no String.prototype)
+ * Lighter production installs using package.json `files`
+ * Travis-CI integration
+ * Travis-CI badges in readme
+
 0.3.0 / 2014-02-02
 ==================
 
