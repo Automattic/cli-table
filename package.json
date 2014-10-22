@@ -9,13 +9,16 @@
     }
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
-      "colors": "0.6.2"
+      "colors": "1.0.3"
     }
   , "devDependencies": {
       "expresso": "~0.9"
     , "should": "~0.6"
     }
-  , "main": "./index.js"
+  , "main": "lib"
+  , "files": [
+      "lib"
+    ]
   , "scripts": {
       "test": "make test"
     }
