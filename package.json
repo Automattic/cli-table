@@ -1,11 +1,11 @@
 {   "name": "cli-table"
   , "description": "Pretty unicode tables for the CLI"
-  , "version": "0.3.1"
+  , "version": "0.3.0"
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
-      "colors": "~1.0"
+      "colors": "1.0.3"
     }
   , "devDependencies": {
       "expresso": "~0.9"
