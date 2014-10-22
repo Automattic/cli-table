@@ -1,4 +1,14 @@
 
+0.3.1 / 2014-10-22
+==================
+
+ * fix example for new paths
+ * Readme badges
+ * Lighter production installs
+ * Safe colors
+ * In addition to 256-xterm ansi colors, handle 24-bit colors
+ * set up .travis.yml
+
 0.3.0 / 2014-02-02
 ==================
 
