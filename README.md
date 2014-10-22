@@ -139,6 +139,27 @@ console.log(table.toString());
 //frobnicate bar quuz
 ```
 
+The ```colAligns``` property controls text alignment:
+```javascript
+var table = new Table({
+  colAligns: ['left', 'center', 'right']
+});
+
+table.push(
+    ['aligned left', 'Yes', '100.00']
+  , ['also left', 'Maybe', '0.00']
+);
+
+console.log(table.toString());
+// Outputs:
+//
+//╔══════════════╤═══════╤════════╗
+//║ aligned left │  Yes  │ 100.00 ║
+//╟──────────────┼───────┼────────╢
+//║ also left    │ Maybe │   0.00 ║
+//╚══════════════╧═══════╧════════╝
+```
+
 ## Running tests
 
 Clone the repository with all its submodules and run:
