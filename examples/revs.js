@@ -3,14 +3,14 @@
  * Module requirements.
  */
 
-var Table = require('../lib/cli-table');
+var Table = require('../lib');
 
 /**
  * Example.
  */
 
 /* col widths */
-var table = new Table({ 
+var table = new Table({
     head: ['Rel', 'Change', 'By', 'When']
   , colWidths: [6, 21, 25, 17]
 });
@@ -24,7 +24,7 @@ console.log(table.toString());
 
 
 /* compact */
-var table = new Table({ 
+var table = new Table({
     head: ['Rel', 'Change', 'By', 'When']
   , colWidths: [6, 21, 25, 17]
   , style : {compact : true, 'padding-left' : 1}
