@@ -41,6 +41,7 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+    table.render().should.eql(expected.join("\n"));
   },
 
   'test width property': function (){
