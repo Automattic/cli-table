@@ -273,5 +273,31 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test unicode string length calculation': function (){
+    var table = new Table({
+      style: {
+          head: []
+        , border: []
+      }
+    });
+
+    table.push(
+        ["x̃"]
+    );
+    table.push(
+        ["𐌢"]
+    );
+
+    var expected = [
+        '┌───┐'
+      , '│ x̃ │'
+      , '├───┤'
+      , '│ 𐌢 │'
+      , '└───┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
   }
 };
