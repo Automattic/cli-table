@@ -273,5 +273,29 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+  },
+  
+  'test with Chinese characters': function(){
+    var table = new Table({
+      style: {
+          head: []
+        , border: []
+      }
+    });
+
+    table.push(
+        ['something', '中文', 0],
+        ['something else', '中文 + english', 1]
+    );
+
+    var expected = [
+        '┌────────────────┬────────────────┬───┐'
+      , '│ something      │ 中文           │ 0 │'
+      , '├────────────────┼────────────────┼───┤'
+      , '│ something else │ 中文 + english │ 1 │'
+      , '└────────────────┴────────────────┴───┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
   }
 };
