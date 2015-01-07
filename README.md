@@ -6,7 +6,8 @@ CLI Table
 This utility allows you to render unicode-aided tables on the command line from
 your node.js scripts.
 
-![Build Status](https://travis-ci.org/Leask/cli-table.png)](https://travis-ci.org/Leask/cli-table) [![Dependency Status](https://gemnasium.com/Automattic/cli-table.png)](https://gemnasium.com/Automattic/cli-table)
+[![Build Status](https://travis-ci.org/Leask/cli-table.png)](https://travis-ci.org/Leask/cli-table)
+[![Dependency Status](https://gemnasium.com/Leask/cli-table.png)](https://gemnasium.com/Leask/cli-table)
 
 ## Features
 
