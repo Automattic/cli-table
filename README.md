@@ -19,7 +19,7 @@ your node.js scripts.
 
 ## Installation
 
-```bash    
+```bash
 npm install cli-table
 ```
 
@@ -86,7 +86,7 @@ $ make test
 
 - Guillermo Rauch &lt;guillermo@learnboost.com&gt; ([Guille](http://github.com/guille))
 
-## License 
+## License
 
 (The MIT License)
 
