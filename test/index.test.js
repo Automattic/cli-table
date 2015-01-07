@@ -115,5 +115,33 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+  },
+
+  'test table with cjk font': function (){
+    var table = new Table({
+        head: ['Name', 'Email', 'Phone', 'Address']
+      , style: {
+            head: []
+          , border: []
+        }
+      , colWidths: [20, 20, 20, 20]
+    });
+
+    table.push(
+        ['黄思夏'     , 'i@leaskh.com'    , '+8618675530413', 'P.R.China']
+      , ['Leask Wong', 'leaskh@gmail.com', '+8613073171897', '天朝'      ]
+    );
+
+    var expected = [
+        '┌────────────────────┬────────────────────┬────────────────────┬────────────────────┐'
+      , '│ Name               │ Email              │ Phone              │ Address            │'
+      , '├────────────────────┼────────────────────┼────────────────────┼────────────────────┤'
+      , '│ 黄思夏             │ i@leaskh.com       │ +8618675530413     │ P.R.China          │'
+      , '├────────────────────┼────────────────────┼────────────────────┼────────────────────┤'
+      , '│ Leask Wong         │ leaskh@gmail.com   │ +8613073171897     │ 天朝               │'
+      , '└────────────────────┴────────────────────┴────────────────────┴────────────────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
   }
 };

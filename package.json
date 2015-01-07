@@ -1,8 +1,11 @@
 {   "name": "cli-table"
   , "description": "Pretty unicode tables for the CLI"
-  , "version": "0.2.0"
+  , "version": "0.2.1"
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
-  , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
+  , "contributors": [
+      "Sonny Michaud <michaud.sonny@gmail.com> (https://github.com/sonnym)",
+      "Leask Wong <i@leaskh.com> (https://github.com/Leask)"
+    ]
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
       "colors": ">= 0.3"
@@ -11,6 +14,9 @@
   , "devDependencies": {
       "expresso": ">= 0.9"
     , "should": ">= 0.6"
+    }
+  , "scripts": {
+      "test": "make test"
     }
   , "main": "./index.js"
   , "engines": { "node": ">= 0.2.0" }
