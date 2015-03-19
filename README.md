@@ -19,7 +19,7 @@ your node.js scripts.
 
 ## Installation
 
-```bash    
+```bash
 npm install cli-table
 ```
 
@@ -139,6 +139,31 @@ console.log(table.toString());
 //frobnicate bar quuz
 ```
 
+### Custom Cell Colors
+
+```javascript
+var table = new Table({
+  head: ['Rel', 'By'],
+  style: {head: ['red'], border: ['grey']}
+});
+
+var off = '\u001b[39m'
+  , red = '\u001b[31m'
+  , orange = '\u001b[38;5;221m'
+  , grey = '\u001b[90m'
+
+  , c256s = orange + 'v0.1' + off;
+
+table.push(
+    [c256s, 'rauchg@gmail.com']
+);
+
+console.log(table.toString());
+
+```
+![Screenshot](/img/cli-colors-example.png)
+
+
 ## Running tests
 
 Clone the repository with all its submodules and run:
@@ -151,7 +176,7 @@ $ make test
 
 - Guillermo Rauch &lt;guillermo@learnboost.com&gt; ([Guille](http://github.com/guille))
 
-## License 
+## License
 
 (The MIT License)
 
