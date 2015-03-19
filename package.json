@@ -17,7 +17,8 @@
   ],
   "dependencies": {
     "colors": "1.0.3",
-    "js-beautify": "^1.5.5"
+    "js-beautify": "^1.5.5",
+    "wcwidth": "*"
   },
   "devDependencies": {
     "expresso": "~0.9",
