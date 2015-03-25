@@ -20,10 +20,7 @@
     "js-beautify": "^1.5.5",
     "wcwidth": "*"
   },
-  "devDependencies": {
-    "expresso": "~0.9",
-    "should": "~0.6"
-  },
+  
   "main": "lib",
   "files": [
     "lib"
