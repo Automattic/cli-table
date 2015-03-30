@@ -17,13 +17,10 @@
   ],
   "dependencies": {
     "colors": "1.0.3",
-    "js-beautify": "^1.5.5",
+    "lodash": "3.6.0",
     "wcwidth": "*"
   },
-  "devDependencies": {
-    "expresso": "~0.9",
-    "should": "~0.6"
-  },
+  
   "main": "lib",
   "files": [
     "lib"
