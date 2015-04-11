@@ -16,7 +16,7 @@
     "table"
   ],
   "dependencies": {
-    "chalk": "^1.0.0"
+    "chalk": "1.0.0"
   },
   "devDependencies": {
     "expresso": "~0.9",
