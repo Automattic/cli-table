@@ -57,3 +57,16 @@ var cross_table = new Table({ head: ["", "Header #1", "Header #2"] });
 cross_table.push({ "Header #3": ["Value 1", "Value 2"] },
                  { "Header #4": ["Value 3", "Value 4"] });
 console.log(cross_table.toString());
+
+
+/* multibytes characters */
+var table = new Table({
+    head: ['排名', '城市', '定位', 'GDP(亿元)', '人均GDP(元)', 'GDP较上一年增速(%)']
+});
+
+table.push(
+    ['1', '上海', '中国经贸中心, 建设为国际大都市', '23560.94', '97555', '9.07']
+  , ['2', '北京', '中国政治及国际交往中心', '21330.80', '100864', '9.39']
+);
+
+console.log(table.toString());
