@@ -1,6 +1,8 @@
 CLI Table [![NPM Version](http://badge.fury.io/js/cli-table.svg)](http://badge.fury.io/js/cli-table) [![Build Status](https://secure.travis-ci.org/Automattic/cli-table.svg)](http://travis-ci.org/Automattic/cli-table)
 =========
 
+This repository is just a fork of the cli-table module, add support for CJK characters.
+
 This utility allows you to render unicode-aided tables on the command line from
 your node.js scripts.
 
