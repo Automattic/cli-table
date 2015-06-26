@@ -31,6 +31,7 @@
     "node": ">= 0.2.0"
   },
   "devDependencies": {
-    "should": "^6.0.3"
+		"expresso" : "~0.9",
+    "should": "~0.6"
   }
 }
