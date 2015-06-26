@@ -17,8 +17,7 @@
   ],
   "dependencies": {
     "colors": "1.0.3",
-    "lodash": "3.6.0",
-    "wcwidth": "*"
+    "lodash": "3.6.0"
   },
   "main": "lib",
   "files": [
