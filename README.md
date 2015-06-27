@@ -140,6 +140,26 @@ console.log(table.toString());
 //foo        bar baz
 //frobnicate bar quuz
 ```
+The ```colAligns``` property controls text alignment:
+```javascript
+var table = new Table({
+  colAligns: ['left', 'center', 'right']
+});
+
+table.push(
+    ['aligned left', 'Yes', '100.00']
+  , ['also left', 'Maybe', '0.00']
+);
+
+console.log(table.toString());
+// Outputs:
+//
+//╔══════════════╤═══════╤════════╗
+//║ aligned left │  Yes  │ 100.00 ║
+//╟──────────────┼───────┼────────╢
+//║ also left    │ Maybe │   0.00 ║
+//╚══════════════╧═══════╧════════╝
+```
 
 ### Custom Cell Colors
 
