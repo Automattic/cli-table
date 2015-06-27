@@ -187,11 +187,11 @@ console.log(table.toString());
 
 ### Text wrapping
 If table's width is bigger than terminal width, the text in each column will be wrapped and show on multiple lines. 
-Each column width will be recalculated in order to match the relation between them. In this case the ```min_column_width```option is respected.
-In case column's required width is below ```min_column_width```, it will be saved and shown with its required size.
-In case column's required width is above ```min_column_width```, it will be recalculated based on the required and available space. If the calculated value is below ```min_column_width```, the column's width will be ```min_column_width```. In case the value is above ```min_column_width```, it will be used. Calculations are dynamic based on the available space.
+Each column width will be recalculated in order to match the relation between them. In this case the ```minColumnWidth```option is respected.
+In case column's required width is below ```minColumnWidth```, it will be saved and shown with its required size.
+In case column's required width is above ```minColumnWidth```, it will be recalculated based on the required and available space. If the calculated value is below ```minColumnWidth```, the column's width will be ```minColumnWidth```. In case the value is above ```minColumnWidth```, it will be used. Calculations are dynamic based on the available space.
 
-> NOTE: Default value of ```min_column_width``` is 15.
+> NOTE: Default value of ```minColumnWidth``` is 2.
 
 ## Running tests
 
