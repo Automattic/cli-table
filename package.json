@@ -1,6 +1,6 @@
-{   "name": "cli-table"
-  , "description": "Pretty unicode tables for the CLI"
-  , "version": "0.3.1"
+{   "name": "cli-table-cjk"
+  , "description": "Pretty unicode tables for the CLI (support cjk characters)"
+  , "version": "0.0.1"
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "repository": {
@@ -10,10 +10,12 @@
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
       "colors": "1.0.3"
+    , "wcwidth": "*"
     }
   , "devDependencies": {
       "expresso": "~0.9"
     , "should": "~0.6"
+    , "wcwidth": "*"
     }
   , "main": "lib"
   , "files": [
