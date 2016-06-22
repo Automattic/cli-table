@@ -74,7 +74,7 @@ table.push(
 console.log(table.toString());
 ```
 
-### Custom styles
+### Custom Styles
 The ```chars``` property controls how the table is drawn:
 ```javascript
 var table = new Table({
@@ -137,6 +137,46 @@ console.log(table.toString());
 // Outputs:
 //foo        bar baz
 //frobnicate bar quuz
+```
+
+### Quick Format (Without Options)
+```javascript
+var Table = require('cli-table');
+var table = Table.quick([
+    { 'first_name': 'John', 'last_name': 'Doe' },
+    { 'first_name': 'Jane', 'last_name': 'Doe' }
+]);
+
+console.log(table.toString());
+// Outputs:
+//┌────────────┬───────────┐
+//│ first_name │ last_name │
+//├────────────┼───────────┤
+//│ John       │ Doe       │
+//├────────────┼───────────┤
+//│ Jane       │ Doe       │
+//└────────────┴───────────┘
+```
+
+### Quick Format (With Options)
+```javascript
+var Table = require('cli-table');
+var table = Table.quick({
+	'head': ['First Name', 'Last Name']
+}, [
+    { 'first_name': 'John', 'last_name': 'Doe' },
+    { 'first_name': 'Jane', 'last_name': 'Doe' }
+]);
+
+console.log(table.toString());
+// Outputs:
+//┌────────────┬───────────┐
+//│ First Name │ Last Name │
+//├────────────┼───────────┤
+//│ John       │ Doe       │
+//├────────────┼───────────┤
+//│ Jane       │ Doe       │
+//└────────────┴───────────┘
 ```
 
 ## Running tests
