@@ -9,7 +9,8 @@
     }
   , "keywords": ["cli", "colors", "table"]
   , "dependencies": {
-      "colors": "1.0.3"
+      "colors": "1.0.3",
+      "string-width": "^2.0.0"
     }
   , "devDependencies": {
       "expresso": "~0.9"
