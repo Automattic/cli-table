@@ -4,6 +4,8 @@ CLI Table [![NPM Version](http://badge.fury.io/js/cli-table.svg)](http://badge.f
 This utility allows you to render unicode-aided tables on the command line from
 your node.js scripts.
 
+# Deprecated. Please use the more feature rich and actively maintained [tty-table](https://github.com/tecfu/tty-table).
+
 ![Screenshot](/img/cli-example.png)
 
 ## Features
