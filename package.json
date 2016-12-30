@@ -8,6 +8,10 @@
       "url": "https://github.com/Automattic/cli-table.git"
     }
   , "keywords": ["cli", "colors", "table"]
+  , "repository": { 
+      "type": "git"
+    , "url": "https://github.com/LearnBoost/cli-table.git"
+    }
   , "dependencies": {
       "colors": "1.0.3"
     }
