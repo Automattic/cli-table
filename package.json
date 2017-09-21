@@ -1,6 +1,7 @@
 {   "name": "cli-table"
   , "description": "Pretty unicode tables for the CLI"
   , "version": "0.3.1"
+  , "license": "MIT"
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "repository": {
