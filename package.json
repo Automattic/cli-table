@@ -2,6 +2,7 @@
   , "description": "Pretty unicode tables for the CLI"
   , "version": "0.3.1"
   , "author": "Guillermo Rauch <guillermo@learnboost.com>"
+  , "license": "MIT"
   , "contributors": ["Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"]
   , "repository": {
       "type": "git",
