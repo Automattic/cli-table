@@ -27,10 +27,10 @@ npm install cli-table
 
 ### Horizontal Tables
 ```javascript
-var Table = require('cli-table');
+import Table from 'cli-table';
 
 // instantiate
-var table = new Table({
+const table = new Table({
     head: ['TH 1 label', 'TH 2 label']
   , colWidths: [100, 200]
 });
@@ -46,8 +46,8 @@ console.log(table.toString());
 
 ### Vertical Tables
 ```javascript
-var Table = require('cli-table');
-var table = new Table();
+const Table = require('cli-table');
+const table = new Table();
 
 table.push(
     { 'Some key': 'Some value' }
@@ -63,8 +63,8 @@ Cross tables are very similar to vertical tables, with two key differences:
 2. The individual rows take the general form of { "Header": ["Row", "Values"] }
 
 ```javascript
-var Table = require('cli-table');
-var table = new Table({ head: ["", "Top Header 1", "Top Header 2"] });
+import Table from 'cli-table';
+const table = new Table({ head: ["", "Top Header 1", "Top Header 2"] });
 
 table.push(
     { 'Left Header 1': ['Value Row 1 Col 1', 'Value Row 1 Col 2'] }
@@ -77,7 +77,7 @@ console.log(table.toString());
 ### Custom styles
 The ```chars``` property controls how the table is drawn:
 ```javascript
-var table = new Table({
+const table = new Table({
   chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
          , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
          , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
@@ -102,7 +102,7 @@ console.log(table.toString());
 Empty decoration lines will be skipped, to avoid vertical separator rows just
 set the 'mid', 'left-mid', 'mid-mid', 'right-mid' to the empty string:
 ```javascript
-var table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
+const table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
 table.push(
     ['foo', 'bar', 'baz']
   , ['frobnicate', 'bar', 'quuz']
@@ -120,7 +120,7 @@ By setting all chars to empty with the exception of 'middle' being set to a
 single space and by setting padding to zero, it's possible to get the most
 compact layout with no decorations:
 ```javascript
-var table = new Table({
+const table = new Table({
   chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': ''
          , 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': ''
          , 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': ''
