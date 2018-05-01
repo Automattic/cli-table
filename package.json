@@ -30,6 +30,6 @@
     "test": "make test"
   },
   "engines": {
-    "node": ">= 0.2.0"
+    "node": ">= 7.5.0"
   }
 }
