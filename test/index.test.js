@@ -273,5 +273,54 @@ module.exports = {
     ];
 
     table.toString().should.eql(expected.join("\n"));
+  },
+  'test with unicode string as values or column names ': function (){
+    var table = new Table({
+        head: ['版本', '修订', '作者', '日期']
+      , style: {
+            'padding-left': 1
+          , 'padding-right': 1
+          , head: []
+          , border: []
+        }
+      , colWidths: [6, 21, 25, 17]
+    });
+
+    table.push(
+        ['v0.1', '增加一些新特性', 'rauchg@gmail.com', '7 分钟前']
+      , ['v0.1', '增加一些新特性', 'rauchg@gmail.com', '8 分钟前']
+    );
+
+    var expected = [
+        '┌──────┬─────────────────────┬─────────────────────────┬─────────────────┐'
+      , '│ 版本 │ 修订                │ 作者                    │ 日期            │'
+      , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤'
+      , '│ v0.1 │ 增加一些新特性      │ rauchg@gmail.com        │ 7 分钟前        │'
+      , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤'
+      , '│ v0.1 │ 增加一些新特性      │ rauchg@gmail.com        │ 8 分钟前        │'
+      , '└──────┴─────────────────────┴─────────────────────────┴─────────────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  },
+  'test disable colors': function() {
+    var table = new Table({ head: ["", "Header 1", "Header 2"], colors: false });
+
+    table.push(
+        {"Header 3": ['v0.1', 'Testing something cool'] }
+      , {"Header 4": ['v0.1', 'Testing something cool'] }
+    );
+
+    var expected = [
+        '┌──────────┬──────────┬────────────────────────┐'
+      , '│          │ Header 1 │ Header 2               │'
+      , '├──────────┼──────────┼────────────────────────┤'
+      , '│ Header 3 │ v0.1     │ Testing something cool │'
+      , '├──────────┼──────────┼────────────────────────┤'
+      , '│ Header 4 │ v0.1     │ Testing something cool │'
+      , '└──────────┴──────────┴────────────────────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
   }
 };
