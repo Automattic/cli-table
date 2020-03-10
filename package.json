@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "chalk": "^2.4.1",
-    "wcwidth": "^1.0.1"
+    "string-width": "^4.2.0"
   },
   "devDependencies": {
     "expresso": "~0.9",
