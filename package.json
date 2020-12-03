@@ -1,7 +1,7 @@
 {
   "name": "@automattic/cli-table",
   "description": "Pretty unicode tables for the CLI",
-  "version": "0.1.0",
+  "version": "0.3.3-dev",
   "license": "MIT",
   "author": "Guillermo Rauch <guillermo@learnboost.com>",
   "contributors": [
