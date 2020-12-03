@@ -1,11 +1,12 @@
 {
-  "name": "cli-table",
+  "name": "@automattic/cli-table",
   "description": "Pretty unicode tables for the CLI",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "license": "MIT",
   "author": "Guillermo Rauch <guillermo@learnboost.com>",
   "contributors": [
-    "Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)"
+    "Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)",
+    "Gabriel Sambarino <gabriel.sambarino@gmail.com> (http://github.com/chrean)"
   ],
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "string-width": "^4.2.0"
+    "publish-please": "^5.5.2",
   },
   "devDependencies": {
     "expresso": "~0.9",
@@ -29,7 +31,8 @@
     "lib"
   ],
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "publish-please": "publish-please --access public"
   },
   "engines": {
     "node": ">= 7.5.0"
