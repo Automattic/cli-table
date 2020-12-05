@@ -35,6 +35,6 @@
     "publish-please": "publish-please --access public"
   },
   "engines": {
-    "node": ">= 7.5.0"
+    "node": ">= 12.13.0"
   }
 }
