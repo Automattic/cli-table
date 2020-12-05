@@ -1,5 +1,5 @@
 {
-  "name": "@automattic/cli-table",
+  "name": "cli-table",
   "description": "Pretty unicode tables for the CLI",
   "version": "0.3.3-dev",
   "license": "MIT",
