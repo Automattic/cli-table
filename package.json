@@ -18,13 +18,15 @@
     "table"
   ],
   "dependencies": {
+    "@types/cli-table": "^0.3.0",
     "chalk": "^2.4.1",
-    "string-width": "^4.2.0",
-    "publish-please": "^5.5.2"
+    "publish-please": "^5.5.2",
+    "string-width": "^4.2.0"
   },
   "devDependencies": {
     "expresso": "~0.9",
-    "should": "~0.6"
+    "should": "~0.6",
+    "typescript": "^4.1.2"
   },
   "main": "lib",
   "files": [
