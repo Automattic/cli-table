@@ -1,7 +1,7 @@
 {
   "name": "cli-table",
   "description": "Pretty unicode tables for the CLI",
-  "version": "0.3.3",
+  "version": "0.3.4-dev",
   "license": "MIT",
   "author": "Guillermo Rauch <guillermo@learnboost.com>",
   "contributors": [
@@ -43,6 +43,6 @@
     "publish-please": "publish-please --access public"
   },
   "engines": {
-    "node": ">= 12.13.0"
+    "node": ">= 10.0.0"
   }
 }
