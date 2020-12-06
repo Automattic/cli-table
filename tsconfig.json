@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es6",
+    "allowJs": true,
+    "outDir": "build",
+    "rootDir": "lib",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true
+  }
+}
