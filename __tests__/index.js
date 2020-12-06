@@ -3,26 +3,23 @@
  * Module requirements.
  */
 
-require('should');
-
-var Table = require('../');
+const Table = require('../');
 
 /**
  * Tests.
  */
 
-module.exports = {
-
-  'test complete table': function (){
-    var table = new Table({
-        head: ['Rel', 'Change', 'By', 'When']
-      , style: {
-            'padding-left': 1
-          , 'padding-right': 1
-          , head: []
-          , border: []
-        }
-      , colWidths: [6, 21, 25, 17]
+describe( 'index.js', () => {
+  it( 'Complete table should be correctly rendered', () => {
+    const table = new Table({
+      head: ['Rel', 'Change', 'By', 'When'],
+      style: {
+        'padding-left': 1,
+        'padding-right': 1,
+        head: [],
+        border: []
+      },
+      colWidths: [6, 21, 25, 17]
     });
 
     table.push(
@@ -30,7 +27,7 @@ module.exports = {
       , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
     );
 
-    var expected = [
+    const expected = [
         '┌──────┬─────────────────────┬─────────────────────────┬─────────────────┐'
       , '│ Rel  │ Change              │ By                      │ When            │'
       , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤'
@@ -40,11 +37,11 @@ module.exports = {
       , '└──────┴─────────────────────┴─────────────────────────┴─────────────────┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test width property': function (){
-    var table = new Table({
+  it( 'Should test width property', () => {
+    const table = new Table({
         head: ['Cool'],
         style: {
           head: [],
@@ -52,18 +49,18 @@ module.exports = {
         }
     });
 
-    table.width.should.eql(8);
-  },
+    expect(table.width).toBe(8);
+  } );
 
-  'test vertical table output': function() {
-    var table = new Table({ style: {'padding-left':0, 'padding-right':0, head:[], border:[]} }); // clear styles to prevent color output
+  it( 'Should test vertical table output', () => {
+    const table = new Table({ style: {'padding-left':0, 'padding-right':0, head:[], border:[]} }); // clear styles to prevent color output
 
     table.push(
         {'v0.1': 'Testing something cool'}
       , {'v0.1': 'Testing something cool'}
     );
 
-    var expected = [
+    const expected = [
         '┌────┬──────────────────────┐'
       , '│v0.1│Testing something cool│'
       , '├────┼──────────────────────┤'
@@ -71,18 +68,18 @@ module.exports = {
       , '└────┴──────────────────────┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test cross table output': function() {
-    var table = new Table({ head: ["", "Header 1", "Header 2"], style: {'padding-left':0, 'padding-right':0, head:[], border:[]} }); // clear styles to prevent color output
+  it( 'Should test cross table output', () => {
+    const table = new Table({ head: ["", "Header 1", "Header 2"], style: {'padding-left':0, 'padding-right':0, head:[], border:[]} }); // clear styles to prevent color output
 
     table.push(
         {"Header 3": ['v0.1', 'Testing something cool'] }
       , {"Header 4": ['v0.1', 'Testing something cool'] }
     );
 
-    var expected = [
+    const expected = [
         '┌────────┬────────┬──────────────────────┐'
       , '│        │Header 1│Header 2              │'
       , '├────────┼────────┼──────────────────────┤'
@@ -92,16 +89,16 @@ module.exports = {
       , '└────────┴────────┴──────────────────────┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test table colors': function(){
-    var table = new Table({
+  it( 'Should test table colors', () => {
+    const table = new Table({
       head: ['Rel', 'By'],
       style: {head: ['red'], border: ['grey']}
     });
 
-    var off = '\u001b[39m'
+    const off = '\u001b[39m'
       , red = '\u001b[31m'
       , orange = '\u001b[38;5;221m'
       , grey = '\u001b[90m'
@@ -112,7 +109,7 @@ module.exports = {
         [c256s, 'rauchg@gmail.com']
     );
 
-    var expected = [
+    const expected = [
         grey + '┌──────┬──────────────────┐' + off
       , grey + '│' + off + red + ' Rel  ' + off + grey + '│' + off + red + ' By               ' + off + grey + '│' + off
       , grey + '├──────┼──────────────────┤' + off
@@ -120,11 +117,11 @@ module.exports = {
       , grey + '└──────┴──────────────────┘' + off
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test custom chars': function (){
-    var table = new Table({
+  it( 'Should test custom chars', () => {
+    const table = new Table({
       chars: {
           'top': '═'
         , 'top-mid': '╤'
@@ -150,7 +147,7 @@ module.exports = {
       , ['frob', 'bar', 'quuz']
     );
 
-    var expected = [
+    const expected = [
         '╔══════╤═════╤══════╗'
       , '║ foo  │ bar │ baz  ║'
       , '╟──────┼─────┼──────╢'
@@ -158,11 +155,11 @@ module.exports = {
       , '╚══════╧═════╧══════╝'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test compact shortand': function (){
-    var table = new Table({
+  it( 'Should test compact shortand', () => {
+    const table = new Table({
       style: {
           head: []
         , border: []
@@ -175,18 +172,18 @@ module.exports = {
       , ['frob', 'bar', 'quuz']
     );
 
-    var expected = [
+    const expected = [
         '┌──────┬─────┬──────┐'
       , '│ foo  │ bar │ baz  │'
       , '│ frob │ bar │ quuz │'
       , '└──────┴─────┴──────┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test compact empty mid line': function (){
-    var table = new Table({
+  if( 'Should test compact empty mid line', () => {
+    const table = new Table({
       chars: {
           'mid': ''
         , 'left-mid': ''
@@ -204,18 +201,18 @@ module.exports = {
       , ['frob', 'bar', 'quuz']
     );
 
-    var expected = [
+    const expected = [
         '┌──────┬─────┬──────┐'
       , '│ foo  │ bar │ baz  │'
       , '│ frob │ bar │ quuz │'
       , '└──────┴─────┴──────┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test decoration lines disabled': function (){
-    var table = new Table({
+  it( 'Should test decoration lines disabled', () => {
+    const table = new Table({
       chars: {
           'top': ''
         , 'top-mid': ''
@@ -246,16 +243,16 @@ module.exports = {
       , ['frobnicate', 'bar', 'quuz']
     );
 
-    var expected = [
+    const expected = [
         'foo        bar baz '
       , 'frobnicate bar quuz'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
 
-  'test with null/undefined as values or column names': function (){
-    var table = new Table({
+  it( 'Should test with null/undefined as values or column names', () => {
+    const table = new Table({
       style: {
           head: []
         , border: []
@@ -266,16 +263,17 @@ module.exports = {
         [null, undefined, 0]
     );
 
-    var expected = [
+    const expected = [
         '┌──┬──┬───┐'
       , '│  │  │ 0 │'
       , '└──┴──┴───┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
-  'test with unicode string as values or column names ': function (){
-    var table = new Table({
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
+
+  it( 'Should test with unicode string as values or column names ', () => {
+    const table = new Table({
         head: ['版本', '修订', '作者', '日期']
       , style: {
             'padding-left': 1
@@ -291,7 +289,7 @@ module.exports = {
       , ['v0.1', '增加一些新特性', 'rauchg@gmail.com', '8 分钟前']
     );
 
-    var expected = [
+    const expected = [
         '┌──────┬─────────────────────┬─────────────────────────┬─────────────────┐'
       , '│ 版本 │ 修订                │ 作者                    │ 日期            │'
       , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤'
@@ -301,17 +299,18 @@ module.exports = {
       , '└──────┴─────────────────────┴─────────────────────────┴─────────────────┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  },
-  'test disable colors': function() {
-    var table = new Table({ head: ["", "Header 1", "Header 2"], colors: false });
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
+
+  it( 'Should test disable colors', () => {
+    const table = new Table({ head: ["", "Header 1", "Header 2"], colors: false });
 
     table.push(
         {"Header 3": ['v0.1', 'Testing something cool'] }
       , {"Header 4": ['v0.1', 'Testing something cool'] }
     );
 
-    var expected = [
+    const expected = [
         '┌──────────┬──────────┬────────────────────────┐'
       , '│          │ Header 1 │ Header 2               │'
       , '├──────────┼──────────┼────────────────────────┤'
@@ -321,6 +320,7 @@ module.exports = {
       , '└──────────┴──────────┴────────────────────────┘'
     ];
 
-    table.toString().should.eql(expected.join("\n"));
-  }
-};
+    expect(table.toString()).toEqual(expected.join("\n"));
+  } );
+} );
+
