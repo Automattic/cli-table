@@ -2,15 +2,15 @@
  * Module requirements.
  */
 
-var Table = require('../');
+const Table = require('../');
 
 /**
  * Tests.
  */
 
-module.exports = {
-  'test table with newlines in headers': function() {
-    var table = new Table({
+describe('Newlines module', () => {
+  it('Should test table with newlines in headers', () => {
+    const table = new Table({
         head: ['Test', "1\n2\n3"]
       , style: {
             'padding-left': 1
@@ -20,7 +20,7 @@ module.exports = {
         }
     });
 
-    var expected = [
+    const expected = [
         '┌──────┬───┐'
       , '│ Test │ 1 │'
       , '│      │ 2 │'
@@ -29,19 +29,19 @@ module.exports = {
     ];
 
     expect(table.toString()).toEqual(expected.join("\n"));
-  },
+  });
 
-  'test column width is accurately reflected when newlines are present': function() {
-    var table = new Table({ head: ['Test\nWidth'], style: {head:[], border:[]} });
+  it('Should test column width is accurately reflected when newlines are present', () => {
+    const table = new Table({ head: ['Test\nWidth'], style: {head:[], border:[]} });
     expect(table.width).toBe(9);
-  },
+  });
 
-  'test newlines in body cells': function() {
-    var table = new Table({style: {head:[], border:[]}});
+  it( 'Should test newlines in body cells', () => {
+    const table = new Table({style: {head:[], border:[]}});
 
     table.push(["something\nwith\nnewlines"]);
 
-    var expected = [
+    const expected = [
         '┌───────────┐'
       , '│ something │'
       , '│ with      │'
@@ -50,16 +50,16 @@ module.exports = {
     ];
 
     expect(table.toString()).toEqual(expected.join("\n"));
-  },
+  });
 
-  'test newlines in vertical cell header and body': function() {
-    var table = new Table({ style: {'padding-left':0, 'padding-right':0, head:[], border:[]} });
+  it('Should test newlines in vertical cell header and body', () => {
+    const table = new Table({ style: {'padding-left':0, 'padding-right':0, head:[], border:[]} });
 
     table.push(
         {'v\n0.1': 'Testing\nsomething cool'}
     );
 
-    var expected = [
+    const expected = [
         '┌───┬──────────────┐'
       , '│v  │Testing       │'
       , '│0.1│something cool│'
@@ -67,14 +67,14 @@ module.exports = {
     ];
 
     expect(table.toString()).toEqual(expected.join("\n"));
-  },
+  });
 
-  'test newlines in cross table header and body': function() {
-    var table = new Table({ head: ["", "Header\n1"], style: {'padding-left':0, 'padding-right':0, head:[], border:[]} });
+  it('Should test newlines in cross table header and body', () => {
+    const table = new Table({ head: ["", "Header\n1"], style: {'padding-left':0, 'padding-right':0, head:[], border:[]} });
 
     table.push({ "Header\n2": ['Testing\nsomething\ncool'] });
 
-    var expected = [
+    const expected = [
         '┌──────┬─────────┐'
       , '│      │Header   │'
       , '│      │1        │'
@@ -86,5 +86,5 @@ module.exports = {
     ];
 
     expect(table.toString()).toEqual(expected.join("\n"));
-  }
-};
+  });
+});

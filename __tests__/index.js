@@ -323,3 +323,4 @@ describe( 'index.js', () => {
     expect(table.toString()).toEqual(expected.join("\n"));
   } );
 } );
+
