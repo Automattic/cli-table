@@ -18,12 +18,16 @@
     "table"
   ],
   "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "babel-jest": "^26.6.3",
     "chalk": "^2.4.1",
-    "string-width": "^4.2.0",
-    "publish-please": "^5.5.2"
+    "publish-please": "^5.5.2",
+    "string-width": "^4.2.0"
   },
   "devDependencies": {
     "expresso": "~0.9",
+    "jest": "^26.6.3",
     "should": "~0.6"
   },
   "main": "lib",
@@ -31,7 +35,7 @@
     "lib"
   ],
   "scripts": {
-    "test": "make test",
+    "test": "jest",
     "publish-please": "publish-please --access public"
   },
   "engines": {
