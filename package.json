@@ -18,7 +18,7 @@
     "table"
   ],
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^4.1.0",
     "string-width": "^4.2.0"
   },
   "devDependencies": {
