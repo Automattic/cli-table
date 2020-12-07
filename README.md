@@ -147,6 +147,14 @@ Clone the repository with all its submodules and run:
 $ make test
 ```
 
+## How to contribute
+
+Contribution are welcome! If you spot a bug or want to request an improvement, you are encouraged to submit a PR.
+
+1. Keep PRs as atomic and limited in scope as possible. Will make reviewing easier and faster.
+1. Want to submit multiple fixes/improvements? Please submit one PR each.
+1. Always add tests for your PRs; this will ensure future changes won't break your code.
+
 ## Credits
 
 - Guillermo Rauch &lt;guillermo@learnboost.com&gt; ([Guille](http://github.com/guille))

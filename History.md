@@ -1,3 +1,8 @@
+0.3.3 / 2020-12-06
+==================
+
+ * Node version supported brought down to 10+
+ * devDependencies fixed and moved to their proper place
 
 0.3.1 / 2014-10-22
 ==================

@@ -1,7 +1,7 @@
 {
   "name": "cli-table",
   "description": "Pretty unicode tables for the CLI",
-  "version": "0.3.2-dev",
+  "version": "0.3.5-dev",
   "license": "MIT",
   "author": "Guillermo Rauch <guillermo@learnboost.com>",
   "contributors": [
@@ -20,12 +20,19 @@
   "dependencies": {
     "@types/cli-table": "^0.3.0",
     "chalk": "^2.4.1",
-    "publish-please": "^5.5.2",
     "string-width": "^4.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "babel-jest": "^26.6.3",
+    "expect": "^26.6.2",
     "expresso": "~0.9",
-    "should": "~0.6",
+    "jest": "^26.6.3",
+    "jest-mock": "^26.6.2",
+    "publish-please": "^5.5.2",
+    "ts-node": "^9.1.0",
     "typescript": "^4.1.2"
   },
   "main": "lib",
@@ -33,10 +40,10 @@
     "lib"
   ],
   "scripts": {
-    "test": "make test",
+    "test": "jest",
     "publish-please": "publish-please --access public"
   },
   "engines": {
-    "node": ">= 12.13.0"
+    "node": ">= 10.0.0"
   }
 }
