@@ -21,8 +21,8 @@ describe('utils',() => {
             expect(pad('hello', 9, ' ', 'both')).toBe('  hello  ');
         });
 
-        it("pad('yo',4,' ', both) == ' yo '", function () {
-            expect(pad('yo', 4, ' ', 'both')).toBe(' yo ');
+        it("pad('yw',4,' ', both) == ' yw '", function () {
+            expect(pad('yw', 4, ' ', 'both')).toBe(' yw ');
         });
 
         it("pad('hello', 2, ' ', right) == 'hello'", function () {
