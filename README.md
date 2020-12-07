@@ -31,17 +31,27 @@ import Table from 'cli-table';
 
 // instantiate
 const table = new Table({
-    head: ['TH 1 label', 'TH 2 label']
-  , colWidths: [100, 200]
+    head: ['TH 1 label', 'TH 2 label'],
+    colWidths: [100, 200]
 });
 
 // table is an Array, so you can `push`, `unshift`, `splice` and friends
 table.push(
+    ['First value', 'Second value'],
     ['First value', 'Second value']
-  , ['First value', 'Second value']
 );
 
 console.log(table.toString());
+```
+
+### Text Alignment
+```javascript
+import Table from 'cli-table';
+
+const table = new Table({
+    colWidths: [100, 200],
+    colAligns: ["left", "right"]
+});
 ```
 
 ### Vertical Tables
@@ -50,8 +60,8 @@ const Table = require('cli-table');
 const table = new Table();
 
 table.push(
-    { 'Some key': 'Some value' }
-  , { 'Another key': 'Another value' }
+    { 'Some key': 'Some value' }, 
+    { 'Another key': 'Another value' }
 );
 
 console.log(table.toString());
@@ -67,8 +77,8 @@ import Table from 'cli-table';
 const table = new Table({ head: ["", "Top Header 1", "Top Header 2"] });
 
 table.push(
-    { 'Left Header 1': ['Value Row 1 Col 1', 'Value Row 1 Col 2'] }
-  , { 'Left Header 2': ['Value Row 2 Col 1', 'Value Row 2 Col 2'] }
+    { 'Left Header 1': ['Value Row 1 Col 1', 'Value Row 1 Col 2'] },
+    { 'Left Header 2': ['Value Row 2 Col 1', 'Value Row 2 Col 2'] }
 );
 
 console.log(table.toString());
@@ -78,15 +88,15 @@ console.log(table.toString());
 The ```chars``` property controls how the table is drawn:
 ```javascript
 const table = new Table({
-  chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
-         , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
-         , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
-         , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }
+  chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗',
+    'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝',
+    'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼',
+    'right': '║' , 'right-mid': '╢' , 'middle': '│' }
 });
 
 table.push(
-    ['foo', 'bar', 'baz']
-  , ['frob', 'bar', 'quuz']
+    ['foo', 'bar', 'baz'],
+    ['frob', 'bar', 'quuz']
 );
 
 console.log(table.toString());
@@ -104,8 +114,8 @@ set the 'mid', 'left-mid', 'mid-mid', 'right-mid' to the empty string:
 ```javascript
 const table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
 table.push(
-    ['foo', 'bar', 'baz']
-  , ['frobnicate', 'bar', 'quuz']
+    ['foo', 'bar', 'baz'],
+    ['frobnicate', 'bar', 'quuz']
 );
 
 console.log(table.toString());
@@ -121,16 +131,16 @@ single space and by setting padding to zero, it's possible to get the most
 compact layout with no decorations:
 ```javascript
 const table = new Table({
-  chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': ''
-         , 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': ''
-         , 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': ''
-         , 'right': '' , 'right-mid': '' , 'middle': ' ' },
+  chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': '',
+    'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': '',
+    'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': '',
+    'right': '' , 'right-mid': '' , 'middle': ' ' },
   style: { 'padding-left': 0, 'padding-right': 0 }
 });
 
 table.push(
-    ['foo', 'bar', 'baz']
-  , ['frobnicate', 'bar', 'quuz']
+    ['foo', 'bar', 'baz'],
+    ['frobnicate', 'bar', 'quuz']
 );
 
 console.log(table.toString());
