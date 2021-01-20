@@ -254,4 +254,27 @@ module.exports = {
     table.toString().should.eql(expected.join("\n"));
   },
 
+  'test rows option in constructor': () => {
+    const table = new Table({
+      style: {
+        head: [],
+        border: []
+      },
+      rows: [
+          ['foo', '7 minutes ago']
+        , ['bar', '8 minutes ago']
+      ]
+    });
+
+    const expected = [
+        '┌─────┬───────────────┐'
+      , '│ foo │ 7 minutes ago │'
+      , '├─────┼───────────────┤'
+      , '│ bar │ 8 minutes ago │'
+      , '└─────┴───────────────┘'
+    ];
+
+    table.toString().should.eql(expected.join("\n"));
+  },
+
 };
