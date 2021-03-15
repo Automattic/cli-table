@@ -151,6 +151,8 @@ $ make test
 
 - Guillermo Rauch &lt;guillermo@learnboost.com&gt; ([Guille](http://github.com/guille))
 
+[![huntr](https://cdn.huntr.dev/huntr_security_badge_mono.svg)](https://huntr.dev)
+
 ## License 
 
 (The MIT License)
