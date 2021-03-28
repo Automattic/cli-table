@@ -44,6 +44,19 @@ table.push(
 console.log(table.toString());
 ```
 
+### Initializing rows in the constructore
+
+Optionally you can initialize rows in the constructors directly - comes in handy for smaller tables:
+
+```
+new Table({
+  rows: [
+      ['foo', '7 minutes ago']
+    , ['bar', '8 minutes ago']
+  ]
+})
+```
+
 ### Vertical Tables
 ```javascript
 var Table = require('cli-table');
