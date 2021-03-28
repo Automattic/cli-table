@@ -1,0 +1,86 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "json",
+        "no-async-foreach"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "camelcase": [
+            "warn",
+            {
+                "properties": "never",
+                "ignoreDestructuring": true
+            }
+        ],
+        "no-console": [
+            "warn"
+        ],
+        "no-unused-vars": [
+            "warn"
+        ],
+        "no-duplicate-imports": [
+            "warn"
+        ],
+        "no-unsafe-negation": [
+            "error"
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 80
+            }
+        ],
+        "arrow-parens": [
+            "warn",
+            "as-needed"
+        ],
+        "radix": [
+            "error"
+        ],
+        "no-async-foreach/no-async-foreach": [
+            "error"
+        ],
+        "spaced-comment": [
+            "warn"
+        ],
+        "valid-typeof": [
+            "error",
+            {
+                "requireStringLiterals": true
+            }
+        ],
+        "no-return-await": [
+            "error"
+        ]
+    }
+}
+
