@@ -4,6 +4,7 @@
  */
 
 var Table = require('../lib');
+var hyperlinker = require('hyperlinker');
 
 /**
  * Example.
@@ -22,12 +23,16 @@ table.push(
 
 console.log(table.toString());
 
-
 /* compact */
 var table = new Table({
-    head: ['Rel', 'Change', 'By', 'When']
-  , colWidths: [6, 21, 25, 17]
-  , style : {compact : true, 'padding-left' : 1}
+    head: ['Rel', 'Change', 'By', 'Link', 'When']
+  , style: {
+        'padding-left': 1
+      , 'padding-right': 1
+      , head: []
+      , border: []
+    }
+  , colWidths: [6, 21, 25, 17, 17]
 });
 
 table.push(
@@ -35,6 +40,20 @@ table.push(
   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
   , []
   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
+);
+
+console.log(table.toString());
+
+/* with hyperlinks */
+var table = new Table({
+    head: ['Rel', 'Change', 'By', 'Link', 'When']
+  , colWidths: [6, 21, 25, 17, 17]
+  , style : {compact : true, 'padding-left' : 1}
+});
+
+table.push(
+    ['v0.1', 'testing something cool', 'rauchg@gmail.com', hyperlinker('link', 'https://adobe.com'), '7 minutes ago']
+  , ['v0.1', 'testing something cool', 'rauchg@gmail.com', hyperlinker('link', 'https://adobe.com'), '8 minutes ago']
 );
 
 console.log(table.toString());
