@@ -7,6 +7,7 @@
     "Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)",
     "Gabriel Sambarino <gabriel.sambarino@gmail.com> (http://github/chrean)"
   ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Automattic/cli-table.git"
