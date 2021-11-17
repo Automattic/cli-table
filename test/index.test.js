@@ -309,4 +309,9 @@ module.exports = {
     table.toString().should.eql(expected.join("\n"));
   },
 
+  'test table with no options provided in constructor': () => {
+    const table = new Table();
+
+    table.should.exist;
+  },
 };
