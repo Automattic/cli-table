@@ -1,7 +1,7 @@
 {
   "name": "cli-table",
   "description": "Pretty unicode tables for the CLI",
-  "version": "0.4.0-dev",
+  "version": "0.3.7-dev",
   "author": "Guillermo Rauch <guillermo@learnboost.com>",
   "contributors": [
     "Sonny Michaud <michaud.sonny@gmail.com> (http://github.com/sonnym)",
