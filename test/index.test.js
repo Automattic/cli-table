@@ -309,4 +309,25 @@ module.exports = {
     table.toString().should.eql(expected.join("\n"));
   },
 
+  'test undefined options in constructor': () => {
+    const table = new Table();
+    table.push(
+        ['foo', 'bar']
+      , ['frobnicate', 'bar', ]
+    );
+
+    const off = '\u001b[39m';
+    const grey = '\u001b[90m';
+
+    const expected = [
+        grey + '┌────────────┬─────┐' + off
+      , grey + '│' + off +' foo        ' + grey + '│' + off + ' bar ' + grey + '│' + off
+      , grey + '├────────────┼─────┤' + off
+      , grey + '│' + off + ' frobnicate ' + grey + '│' + off + ' bar ' + grey + '│' + off
+      , grey + '└────────────┴─────┘' + off
+    ];
+
+    table.toString().should.eql(expected.join('\n'));
+  },
+
 };
