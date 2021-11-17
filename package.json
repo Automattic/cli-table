@@ -18,13 +18,15 @@
     "table"
   ],
   "dependencies": {
-    "colors": "1.0.3"
+    "colors": "1.0.3",
+    "strip-ansi": "^6.0.1"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-no-async-foreach": "^0.1.1",
     "expresso": "~0.9",
+    "hyperlinker": "^1.0.0",
     "should": "~0.6"
   },
   "main": "lib",
