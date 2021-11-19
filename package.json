@@ -35,8 +35,5 @@
   ],
   "scripts": {
     "test": "make test"
-  },
-  "engines": {
-    "node": ">= 12"
   }
 }
