@@ -4,7 +4,6 @@
  */
 
 require('should');
-var hyperlinker = require('hyperlinker');
 
 var Table = require('../');
 
@@ -39,37 +38,6 @@ module.exports = {
       , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤'
       , '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ 8 minutes ago   │'
       , '└──────┴─────────────────────┴─────────────────────────┴─────────────────┘'
-    ];
-
-    table.toString().should.eql(expected.join("\n"));
-  },
-
-  'test table with ANSI hyperlink escape codes': function (){
-    var table = new Table({
-        head: ['Rel', 'Change', 'By', 'Link', 'When']
-      , colWidths: [6, 21, 25, 17, 17]
-      , style : {compact : true, 'padding-left' : 1, head: [], border: []}
-    });
-
-    table.push(
-        ['v0.1', 'Testing something cool', 'rauchg@gmail.com', hyperlinker('link', 'https://adobe.com'), '7 minutes ago']
-      , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', hyperlinker('link', 'https://adobe.com'), '8 minutes ago']
-    );
-
-    var expected = [
-        '┌──────┬─────────────────────┬─────────────────────────┬─────────────────┬─────────────────┐'
-      , '│ Rel  │ Change              │ By                      │ Link            │ When            │'
-      , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┼─────────────────┤'
-      , '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ \x1B]8;;https://adobe.com\x07link\x1B]8;;\x07            │ 7 minutes ago   │'
-      , '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ \x1B]8;;https://adobe.com\x07link\x1B]8;;\x07            │ 8 minutes ago   │'
-      , '└──────┴─────────────────────┴─────────────────────────┴─────────────────┴─────────────────┘'
-      //   '┌──────┬─────────────────────┬─────────────────────────┬─────────────────┐'
-      // , '│ Rel  │ Change              │ By                      │ When            │'
-      // , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤'
-      // , '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ 7 minutes ago   │'
-      // , '├──────┼─────────────────────┼─────────────────────────┼─────────────────┤'
-      // , '│ v0.1 │ Testing something … │ rauchg@gmail.com        │ 8 minutes ago   │'
-      // , '└──────┴─────────────────────┴─────────────────────────┴─────────────────┘'
     ];
 
     table.toString().should.eql(expected.join("\n"));
