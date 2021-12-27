@@ -282,4 +282,25 @@ module.exports = {
 
     table.should.exist;
   },
+
+  'test chinese width property': function (){
+    var table = new Table({
+        head: ['中文'],
+        style: {
+          head: [],
+          border: []
+        }
+    });
+    table.width.should.eql(8);
+  },
+  'test mixed chinese and english width property': function (){
+    var table = new Table({
+        head: ['中文abc123'],
+        style: {
+          head: [],
+          border: []
+        }
+    });
+    table.width.should.eql(14);
+  },
 };
