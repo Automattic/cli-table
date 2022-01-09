@@ -10,7 +10,7 @@ your node.js scripts.
 
 - Customizable characters that constitute the table.
 - Color/background styling in the header through
-  [colors.js](http://github.com/marak/colors.js)
+  [chalk](https://github.com/chalk/chalk)
 - Column width customization
 - Text truncation based on predefined widths
 - Text alignment (left, right, center)
@@ -19,7 +19,7 @@ your node.js scripts.
 
 ## Installation
 
-```bash    
+```bash
 npm install cli-table
 ```
 
@@ -166,7 +166,7 @@ $ make test
 
 [![huntr](https://cdn.huntr.dev/huntr_security_badge_mono.svg)](https://huntr.dev)
 
-## License 
+## License
 
 (The MIT License)
 
