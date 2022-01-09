@@ -11,7 +11,7 @@
   },
   "keywords": ["cli", "colors", "table"],
   "dependencies": {
-    "colors": "1.0.3"
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
     "expresso": "~0.9",
