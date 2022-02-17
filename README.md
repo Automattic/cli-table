@@ -10,7 +10,7 @@ your node.js scripts.
 
 - Customizable characters that constitute the table.
 - Color/background styling in the header through
-  [colors.js](http://github.com/marak/colors.js)
+  [colors.js](http://github.com/DABH/colors.js)
 - Column width customization
 - Text truncation based on predefined widths
 - Text alignment (left, right, center)
