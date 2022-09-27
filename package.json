@@ -17,7 +17,8 @@
     "expresso": "~0.9",
     "should": "~0.6"
   },
-  "main": "lib",
+  "main": "./lib/index.js",
+  "types": "./lib/main.d.ts",
   "files": ["lib"],
   "scripts": {
     "test": "make test"
