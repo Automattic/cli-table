@@ -44,7 +44,7 @@ table.push(
 console.log(table.toString());
 ```
 
-### Initializing rows in the constructore
+### Initializing rows in the constructor
 
 Optionally you can initialize rows in the constructors directly - comes in handy for smaller tables:
 
